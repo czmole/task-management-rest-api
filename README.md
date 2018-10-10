@@ -1,28 +1,48 @@
-# Adonis API application
+# Task management REST API (Node.js)
 
-This is the boilerplate for creating an API server in AdonisJs, it comes pre-configured with.
+My first REST API written in Node.js using Adonis.js as framework. So what does it have to offer?
 
-1. Bodyparser
-2. Authentication
-3. CORS
-4. Lucid ORM
-5. Migrations and seeds
+- Models, Migrations, Seeds
+  - User
+  - Token
+  - Role
+  - Project
+  - Task
+- Controllers
+  - LoginController
+  - ProjectController
+  - TaskController
+- 15 API endpoints
+- Documented with JSDoc
+- Factories
+- JWT authentication
+- Protected middleware
 
-## Setup
+## Installation
 
-Use the adonis command to install the blueprint
+Before you proceed please read the documentation of [Adonis 4.1](https://adonisjs.com/docs/4.1/about)
+to make the process a lot smoother.
 
-```bash
-adonis new yardstick --api-only
-```
+### Step 1
 
-or manually clone the repo and then run `npm install`.
+Clone a copy of this repository `git clone https://github.com/Larsklopstra/task-management-rest-api`
 
+### Step 2
 
-### Migrations
+Run `npm i` to install all the dependencies.
 
-Run the following command to run startup migrations.
+### Step 3
 
-```js
-adonis migration:run
-```
+Make a new `.env` file using the `.env.example` and fill it out with your data.
+
+### Step 4
+
+Run `adonis key:generate`
+
+### Step 5
+
+Run `adonis migration:run --seed` you're now the proud owner of a REST API! You can login with any of the emails and the password: `secret`
+
+## Future updates
+
+In the future I'll add more methods such as sorting by `parameters` and add an `AuthorizationService` that will make use of the roles. Next up is creating a client using Vue.js and Vuex so I can consume this REST API (This will become a stand-alone repository).
